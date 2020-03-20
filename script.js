@@ -17,6 +17,7 @@ function calculate() {
   .then(data => {
     // console.log(data);
     const rate = data.rates[currency_two];
+    // shows the conversion rate for 1 of currency_one to currency_two
 
     rateEl.innerText = `1 ${currency_one} = ${rate} ${currency_two}`;
 
@@ -30,6 +31,7 @@ amountEl_one.addEventListener('input', calculate);
 currentEl_two.addEventListener('change', calculate);
 amountEl_two.addEventListener('input', calculate);
 
+// Swaps currencies on click of 'swap' button
 swap.addEventListener('click', () =>{
   const temp = currentEl_one.value;
   currentEl_one.value = currentEl_two.value;
